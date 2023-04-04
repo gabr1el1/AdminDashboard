@@ -1,55 +1,110 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --main-color: linear-gradient(to bottom,rgb(0, 255, 166), skyblue);
+
+:root {
+    --main-color: linear-gradient(to bottom, rgb(0, 255, 166), skyblue);
+    --secondary-color: rgb(0, 81, 255);
     --main-bg: rgb(242, 236, 236);
 }
-body,html{
+
+body,
+html {
     min-height: 100vh;
 }
-body{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: grid;
     grid-template-columns: 1fr 4fr;
 }
-aside{
+
+aside {
     padding: 10px;
     background: var(--main-color);
     color: white;
     display: grid;
     font-weight: bold;
     gap: 20px;
-    grid-template-rows: repeat(auto-fit, minmax(0,max-content));
+    grid-template-rows: repeat(auto-fit, minmax(0, max-content));
 }
 
-aside ul{
+aside ul {
     list-style-type: none;
 }
-aside ul li{
+
+aside ul li {
     margin-bottom: 5px;
 }
-.content{
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+nav input{
+    width: 80%;
+    border-radius: 8px;
+    border: none;
+    background: var(--main-bg);
+}
+
+nav button{
+    background: var(--main-color);
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 15px;
+    gap: 15px;
     background-color: var(--main-bg);
     padding-bottom: 35px;
 }
-.your-projects{
-    margin-right: 15px;
-}
-.card{
+
+.card {
     background-color: white;
     border-radius: 5px;
     padding: 10px;
-    border-left: thick solid gold;
 }
-.card-wrapper{
+
+.your-projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
+    flex: 1;
 }
 
+.projects .card {
+    border-left: thick solid var(--secondary-color);
+}
+
+.new {
+    display: grid;
+    gap: 15px;
+}
+.new > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.new > div >.card{
+    flex: 1;
+}
+
+.announcements .card .announcement:not(:last-child) {
+    border-bottom: thin solid rgba(128, 128, 128, 0.191);
+}
