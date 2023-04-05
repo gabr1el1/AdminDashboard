@@ -62,6 +62,9 @@ aside ul {
 
 aside ul li {
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 main {
@@ -84,6 +87,10 @@ nav>div {
     gap: 15px;
 }
 
+nav p,span{
+    font-weight: bolder;
+}
+
 nav .options,
 .profile-info {
     justify-content: flex-end;
@@ -92,6 +99,7 @@ nav .options,
 nav .welcome-pic {
     width: 60px;
     height: 60px;
+    border-radius: 100%;
 }
 
 .profile-pic {
@@ -159,10 +167,26 @@ nav button {
     flex-direction: column;
 }
 
+.card>div{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
 .new>div>.card {
     flex: 1;
 }
 
+.new > .trendings > .card > div{
+    display: flex;
+    gap: 10px;
+}
+
 .announcements .card .announcement:not(:last-child) {
     border-bottom: thin solid rgba(128, 128, 128, 0.191);
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
